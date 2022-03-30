@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/prmaryFragment">
+
+    <fragment
+        android:id="@+id/prmaryFragment"
+        android:name="com.example.backgroundprocess.PrmaryFragment"
+        android:label="fragment_prmary"
+        tools:layout="@layout/fragment_prmary" >
+        <action
+            android:id="@+id/action_prmaryFragment_to_secondaryFragment"
+            app:destination="@id/secondaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondaryFragment"
+        android:name="com.example.backgroundprocess.SecondaryFragment"
+        android:label="fragment_secondary"
+        tools:layout="@layout/fragment_secondary" >
+        <argument
+            android:name="appleCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="maxAppleCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
