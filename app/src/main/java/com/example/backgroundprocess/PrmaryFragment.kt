@@ -1,12 +1,12 @@
 package com.example.backgroundprocess
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 
@@ -17,7 +17,6 @@ class PrmaryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_prmary, container, false)
     }
 
@@ -29,17 +28,16 @@ class PrmaryFragment : Fragment() {
         val button = view.findViewById<Button>(R.id.send)
 
 
-        button.setOnClickListener{
+        button.setOnClickListener {
             if (tv_apple_count.text.length != 0 && tv_apple_max_count.text.length != 0)
                 findNavController()
-                    .navigate(PrmaryFragmentDirections
-                        .actionPrmaryFragmentToSecondaryFragment(
-                            tv_apple_count.text.toString().toInt(),
-                            tv_apple_max_count.text.toString().toInt(),
-                        )
+                    .navigate(
+                        PrmaryFragmentDirections
+                            .actionPrmaryFragmentToSecondaryFragment(
+                                tv_apple_count.text.toString().toInt(),
+                                tv_apple_max_count.text.toString().toInt(),
+                            )
                     )
         }
-
-
     }
 }
